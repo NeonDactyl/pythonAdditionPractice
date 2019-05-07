@@ -22,6 +22,9 @@ class AdditionGui(object):
         for item in self.main_frame.winfo_children():
             if isinstance(item, Label):
                 item.config(bg=self.default_bg)
+        self.user_input.set('')
+        self.problem = choice(self.problems)
+        self.setProblem()
 
     def checkAnswer(self, *args):
         self.timer.cancel()
@@ -42,9 +45,6 @@ class AdditionGui(object):
             self.wrong[self.prob_str] = self.wrong.get(self.prob_str, 0) + 1
         self.timer = threading.Timer(1.0, self.resetCorrect)
         self.timer.start()
-        self.user_input.set('')
-        self.problem = choice(self.problems)
-        self.setProblem()
 
     def loadPrevious(self):
         try:
