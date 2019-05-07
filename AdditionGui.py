@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Frame, Entry, N, E, S, W, StringVar
+from tkinter import Tk, Label, Frame, Entry, N, E, S, W, StringVar, RIGHT
 from random import choice
 from datetime import datetime
 import json
@@ -123,7 +123,8 @@ class AdditionGui(object):
         self.second_label.grid(column=1, row=1, sticky=(W, E, S, N))
         self.setFont(self.second_label)
 
-        self.user_input_entry = Entry(self.main_frame, width=7, textvariable=self.user_input)
+        self.user_input_entry = Entry(self.main_frame, width=7,
+                                      textvariable=self.user_input, justify=RIGHT)
         self.user_input_entry.grid(column=0, row=2, columnspan=2, sticky=(N))
         self.setFont(self.user_input_entry)
 
